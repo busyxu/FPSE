@@ -1,0 +1,552 @@
+=== TestCase : gsl_acosh&bitwuzla&bfs_output/
+1, 100.0 , 34
+13, 100.0 , 34
+=== End
+=== TestCase : gsl_acosh&bitwuzla&dfs_output/
+1, 100.0 , 34
+2, 100.0 , 34
+=== End
+=== TestCase : gsl_acosh&cvc5-real&bfs_output/
+1, 100.0 , 34
+=== End
+=== TestCase : gsl_acosh&cvc5-real&dfs_output/
+1, 100.0 , 34
+=== End
+=== TestCase : gsl_acosh&dreal-is&bfs_output/
+1, 100.0 , 34
+=== End
+=== TestCase : gsl_acosh&dreal-is&dfs_output/
+=== End
+=== TestCase : gsl_acosh&gosat&bfs_output/
+1, 100.0 , 34
+=== End
+=== TestCase : gsl_acosh&gosat&dfs_output/
+2, 100.0 , 34
+=== End
+=== TestCase : gsl_acosh&jfs&bfs_output/
+=== End
+=== TestCase : gsl_acosh&jfs&dfs_output/
+1, 100.0 , 34
+30, 100.0 , 34
+305, 100.0 , 34
+307, 100.0 , 34
+307, 100.0 , 34
+307, 100.0 , 34
+=== End
+=== TestCase : gsl_acosh&mathsat5&bfs_output/
+1, 100.0 , 34
+=== End
+=== TestCase : gsl_acosh&mathsat5&dfs_output/
+2, 100.0 , 34
+2, 100.0 , 34
+=== End
+=== TestCase : gsl_acosh&smt&bfs_output/
+1, 100.0 , 34
+120, 100.0 , 34
+=== End
+=== TestCase : gsl_acosh&smt&dfs_output/
+1, 100.0 , 34
+2, 100.0 , 34
+110, 100.0 , 34
+=== End
+=== TestCase : gsl_asinh&bitwuzla&bfs_output/
+1, 100.0 , 34
+3, 100.0 , 34
+=== End
+=== TestCase : gsl_asinh&bitwuzla&dfs_output/
+1, 100.0 , 34
+=== End
+=== TestCase : gsl_asinh&cvc5-real&bfs_output/
+1, 100.0 , 34
+=== End
+=== TestCase : gsl_asinh&cvc5-real&dfs_output/
+1, 100.0 , 34
+=== End
+=== TestCase : gsl_asinh&dreal-is&bfs_output/
+2, 100.0 , 34
+=== End
+=== TestCase : gsl_asinh&dreal-is&dfs_output/
+1, 100.0 , 34
+=== End
+=== TestCase : gsl_asinh&gosat&bfs_output/
+1, 100.0 , 34
+=== End
+=== TestCase : gsl_asinh&gosat&dfs_output/
+1, 100.0 , 34
+=== End
+=== TestCase : gsl_asinh&jfs&bfs_output/
+1, 100.0 , 34
+38, 100.0 , 34
+281, 100.0 , 34
+=== End
+=== TestCase : gsl_asinh&jfs&dfs_output/
+1, 100.0 , 34
+74, 100.0 , 34
+148, 100.0 , 34
+255, 100.0 , 34
+260, 100.0 , 34
+=== End
+=== TestCase : gsl_asinh&mathsat5&bfs_output/
+1, 100.0 , 34
+=== End
+=== TestCase : gsl_asinh&mathsat5&dfs_output/
+1, 100.0 , 34
+=== End
+=== TestCase : gsl_asinh&smt&bfs_output/
+1, 100.0 , 34
+63, 100.0 , 34
+264, 100.0 , 34
+=== End
+=== TestCase : gsl_asinh&smt&dfs_output/
+1, 100.0 , 34
+54, 100.0 , 34
+170,
+304, 100.0 , 34
+304, 100.0 , 34
+304, 100.0 , 34
+=== End
+=== TestCase : gsl_atanh&bitwuzla&bfs_output/
+1, 100.0 , 34
+1, 100.0 , 34
+2, 100.0 , 34
+36, 100.0 , 34
+=== End
+=== TestCase : gsl_atanh&bitwuzla&dfs_output/
+1, 100.0 , 34
+=== End
+=== TestCase : gsl_atanh&cvc5-real&bfs_output/
+1, 100.0 , 34
+=== End
+=== TestCase : gsl_atanh&cvc5-real&dfs_output/
+1, 100.0 , 34
+=== End
+=== TestCase : gsl_atanh&dreal-is&bfs_output/
+1, 100.0 , 34
+=== End
+=== TestCase : gsl_atanh&dreal-is&dfs_output/
+1, 100.0 , 34
+=== End
+=== TestCase : gsl_atanh&gosat&bfs_output/
+=== End
+=== TestCase : gsl_atanh&gosat&dfs_output/
+1, 100.0 , 34
+=== End
+=== TestCase : gsl_atanh&jfs&bfs_output/
+1, 100.0 , 34
+4, 100.0 , 34
+9, 100.0 , 34
+316, 100.0 , 34
+316, 100.0 , 34
+=== End
+=== TestCase : gsl_atanh&jfs&dfs_output/
+1, 100.0 , 34
+306, 100.0 , 34
+307, 100.0 , 34
+307, 100.0 , 34
+307, 100.0 , 34
+=== End
+=== TestCase : gsl_atanh&mathsat5&bfs_output/
+1, 100.0 , 34
+2, 100.0 , 34
+3, 100.0 , 34
+92, 100.0 , 34
+283, 100.0 , 34
+302, 100.0 , 34
+302, 100.0 , 34
+=== End
+=== TestCase : gsl_atanh&mathsat5&dfs_output/
+1, 100.0 , 34
+=== End
+=== TestCase : gsl_atanh&smt&bfs_output/
+1, 100.0 , 34
+2, 100.0 , 34
+3, 100.0 , 34
+81, 100.0 , 34
+312, 100.0 , 34
+312, 100.0 , 34
+=== End
+=== TestCase : gsl_atanh&smt&dfs_output/
+1, 100.0 , 34
+121, 100.0 , 34
+201, 100.0 , 34
+=== End
+=== TestCase : gsl_expm1&bitwuzla&bfs_output/
+=== End
+=== TestCase : gsl_expm1&bitwuzla&dfs_output/
+=== End
+=== TestCase : gsl_expm1&cvc5-real&bfs_output/
+=== End
+=== TestCase : gsl_expm1&cvc5-real&dfs_output/
+=== End
+=== TestCase : gsl_expm1&dreal-is&bfs_output/
+=== End
+=== TestCase : gsl_expm1&dreal-is&dfs_output/
+=== End
+=== TestCase : gsl_expm1&gosat&bfs_output/
+=== End
+=== TestCase : gsl_expm1&gosat&dfs_output/
+137, 100.0 , 13
+=== End
+=== TestCase : gsl_expm1&jfs&bfs_output/
+=== End
+=== TestCase : gsl_expm1&jfs&dfs_output/
+36, 100.0 , 13
+142, 100.0 , 13
+146, 100.0 , 13
+185, 100.0 , 13
+187, 100.0 , 13
+227, 100.0 , 13
+229, 100.0 , 13
+269, 100.0 , 13
+271, 100.0 , 13
+312, 100.0 , 13
+314, 100.0 , 13
+316, 100.0 , 13
+=== End
+=== TestCase : gsl_expm1&mathsat5&bfs_output/
+=== End
+=== TestCase : gsl_expm1&mathsat5&dfs_output/
+=== End
+=== TestCase : gsl_expm1&smt&bfs_output/
+=== End
+=== TestCase : gsl_expm1&smt&dfs_output/
+=== End
+=== TestCase : gsl_hypot3&bitwuzla&bfs_output/
+2, 100.0 , 26
+2, 100.0 , 26
+=== End
+=== TestCase : gsl_hypot3&bitwuzla&dfs_output/
+=== End
+=== TestCase : gsl_hypot3&cvc5-real&bfs_output/
+1, 100.0 , 26
+=== End
+=== TestCase : gsl_hypot3&cvc5-real&dfs_output/
+1, 100.0 , 26
+=== End
+=== TestCase : gsl_hypot3&dreal-is&bfs_output/
+=== End
+=== TestCase : gsl_hypot3&dreal-is&dfs_output/
+=== End
+=== TestCase : gsl_hypot3&gosat&bfs_output/
+1, 100.0 , 26
+=== End
+=== TestCase : gsl_hypot3&gosat&dfs_output/
+1, 100.0 , 26
+329, 100.0 , 26
+329, 100.0 , 26
+329, 100.0 , 26
+=== End
+=== TestCase : gsl_hypot3&jfs&bfs_output/
+1, 100.0 , 26
+39, 100.0 , 26
+41, 100.0 , 26
+=== End
+=== TestCase : gsl_hypot3&jfs&dfs_output/
+1, 100.0 , 26
+41, 100.0 , 26
+43, 100.0 , 26
+149, 100.0 , 26
+152, 100.0 , 26
+256, 100.0 , 26
+258, 100.0 , 26
+297, 100.0 , 26
+299, 100.0 , 26
+=== End
+=== TestCase : gsl_hypot3&mathsat5&bfs_output/
+1, 100.0 , 26
+3, 100.0 , 26
+=== End
+=== TestCase : gsl_hypot3&mathsat5&dfs_output/
+2, 100.0 , 26
+5, 100.0 , 26
+=== End
+=== TestCase : gsl_hypot3&smt&bfs_output/
+1, 100.0 , 26
+9, 100.0 , 26
+188, 100.0 , 26
+265, 100.0 , 26
+320, 100.0 , 26
+=== End
+=== TestCase : gsl_hypot3&smt&dfs_output/
+1, 100.0 , 26
+10, 100.0 , 26
+43, 100.0 , 26
+100, 100.0 , 26
+142, 100.0 , 26
+175, 100.0 , 26
+233, 100.0 , 26
+266, 100.0 , 26
+306, 100.0 , 26
+307, 100.0 , 26
+307, 100.0 , 26
+307, 100.0 , 26
+=== End
+=== TestCase : gsl_hypot&bitwuzla&bfs_output/
+1, 100.0 , 26
+2, 100.0 , 26
+2, 100.0 , 26
+3, 100.0 , 26
+5, 100.0 , 26
+124, 100.0 , 26
+=== End
+=== TestCase : gsl_hypot&bitwuzla&dfs_output/
+2, 100.0 , 26
+4, 100.0 , 26
+130, 100.0 , 26
+=== End
+=== TestCase : gsl_hypot&cvc5-real&bfs_output/
+=== End
+=== TestCase : gsl_hypot&cvc5-real&dfs_output/
+1, 100.0 , 26
+=== End
+=== TestCase : gsl_hypot&dreal-is&bfs_output/
+=== End
+=== TestCase : gsl_hypot&dreal-is&dfs_output/
+1, 100.0 , 26
+3, 100.0 , 26
+3, 100.0 , 26
+4, 100.0 , 26
+=== End
+=== TestCase : gsl_hypot&gosat&bfs_output/
+1, 100.0 , 26
+2, 100.0 , 26
+3, 100.0 , 26
+125, 100.0 , 26
+137, 100.0 , 26
+=== End
+=== TestCase : gsl_hypot&gosat&dfs_output/
+1, 100.0 , 26
+130, 100.0 , 26
+135, 100.0 , 26
+135, 100.0 , 26
+138, 100.0 , 26
+=== End
+=== TestCase : gsl_hypot&jfs&bfs_output/
+=== End
+=== TestCase : gsl_hypot&jfs&dfs_output/
+=== End
+=== TestCase : gsl_hypot&mathsat5&bfs_output/
+=== End
+=== TestCase : gsl_hypot&mathsat5&dfs_output/
+1, 100.0 , 26
+4, 100.0 , 26
+=== End
+=== TestCase : gsl_hypot&smt&bfs_output/
+1, 100.0 , 26
+2, 100.0 , 26
+3, 100.0 , 26
+15, 100.0 , 26
+96, 100.0 , 26
+114, 100.0 , 26
+181, 100.0 , 26
+310, 100.0 , 26
+=== End
+=== TestCase : gsl_hypot&smt&dfs_output/
+1, 100.0 , 26
+12, 100.0 , 26
+46, 100.0 , 26
+64, 100.0 , 26
+86, 100.0 , 26
+224, 100.0 , 26
+=== End
+=== TestCase : gsl_ldexp&bitwuzla&bfs_output/
+=== End
+=== TestCase : gsl_ldexp&bitwuzla&dfs_output/
+1, 100.0 , 33
+4, 100.0 , 33
+5, 100.0 , 33
+=== End
+=== TestCase : gsl_ldexp&cvc5-real&bfs_output/
+=== End
+=== TestCase : gsl_ldexp&cvc5-real&dfs_output/
+=== End
+=== TestCase : gsl_ldexp&dreal-is&bfs_output/
+=== End
+=== TestCase : gsl_ldexp&dreal-is&dfs_output/
+1, 100.0 , 33
+=== End
+=== TestCase : gsl_ldexp&gosat&bfs_output/
+=== End
+=== TestCase : gsl_ldexp&gosat&dfs_output/
+1, 100.0 , 33
+=== End
+=== TestCase : gsl_ldexp&jfs&bfs_output/
+=== End
+=== TestCase : gsl_ldexp&jfs&dfs_output/
+1, 100.0 , 33
+106, 100.0 , 33
+308, 100.0 , 33
+309, 100.0 , 33
+309, 100.0 , 33
+=== End
+=== TestCase : gsl_ldexp&mathsat5&bfs_output/
+=== End
+=== TestCase : gsl_ldexp&mathsat5&dfs_output/
+=== End
+=== TestCase : gsl_ldexp&smt&bfs_output/
+=== End
+=== TestCase : gsl_ldexp&smt&dfs_output/
+=== End
+=== TestCase : gsl_log1p&bitwuzla&bfs_output/
+1, 100.0 , 3
+2, 100.0 , 3
+3, 100.0 , 3
+=== End
+=== TestCase : gsl_log1p&bitwuzla&dfs_output/
+=== End
+=== TestCase : gsl_log1p&cvc5-real&bfs_output/
+=== End
+=== TestCase : gsl_log1p&cvc5-real&dfs_output/
+=== End
+=== TestCase : gsl_log1p&dreal-is&bfs_output/
+2, 100.0 , 3
+2, 100.0 , 3
+=== End
+=== TestCase : gsl_log1p&dreal-is&dfs_output/
+1, 100.0 , 3
+1, 100.0 , 3
+=== End
+=== TestCase : gsl_log1p&gosat&bfs_output/
+20, 100.0 , 3
+138, 100.0 , 3
+=== End
+=== TestCase : gsl_log1p&gosat&dfs_output/
+20, 100.0 , 3
+141, 100.0 , 3
+=== End
+=== TestCase : gsl_log1p&jfs&bfs_output/
+70, 100.0 , 3
+74, 100.0 , 3
+110, 100.0 , 3
+114, 100.0 , 3
+150, 100.0 , 3
+221, 100.0 , 3
+223, 100.0 , 3
+234, 100.0 , 3
+305, 100.0 , 3
+307, 100.0 , 3
+309, 100.0 , 3
+=== End
+=== TestCase : gsl_log1p&jfs&dfs_output/
+69, 100.0 , 3
+73, 100.0 , 3
+108, 100.0 , 3
+113, 100.0 , 3
+148, 100.0 , 3
+219, 100.0 , 3
+221, 100.0 , 3
+231, 100.0 , 3
+302, 100.0 , 3
+304, 100.0 , 3
+305, 100.0 , 3
+=== End
+=== TestCase : gsl_log1p&mathsat5&bfs_output/
+3, 100.0 , 3
+6, 100.0 , 3
+7, 100.0 , 3
+195, 100.0 , 3
+=== End
+=== TestCase : gsl_log1p&mathsat5&dfs_output/
+=== End
+=== TestCase : gsl_log1p&smt&bfs_output/
+7, 100.0 , 3
+26, 100.0 , 3
+29, 100.0 , 3
+68, 100.0 , 3
+83, 100.0 , 3
+118, 100.0 , 3
+131, 100.0 , 3
+136, 100.0 , 3
+137, 100.0 , 3
+168, 100.0 , 3
+169,
+305, 100.0 , 3
+305, 100.0 , 3
+306, 100.0 , 3
+=== End
+=== TestCase : gsl_log1p&smt&dfs_output/
+=== End
+=== TestCase : gsl_pow_int&bitwuzla&bfs_output/
+1, 0.0 , 0
+1, 0.0 , 0
+=== End
+=== TestCase : gsl_pow_int&bitwuzla&dfs_output/
+1, 0.0 , 0
+1, 0.0 , 0
+=== End
+=== TestCase : gsl_pow_int&cvc5-real&bfs_output/
+=== End
+=== TestCase : gsl_pow_int&cvc5-real&dfs_output/
+=== End
+=== TestCase : gsl_pow_int&dreal-is&bfs_output/
+1, 0.0 , 0
+1, 0.0 , 0
+2, 0.0 , 0
+2, 0.0 , 0
+2, 0.0 , 0
+2, 0.0 , 0
+3, 0.0 , 0
+5, 0.0 , 0
+=== End
+=== TestCase : gsl_pow_int&dreal-is&dfs_output/
+1, 0.0 , 0
+1, 0.0 , 0
+2, 0.0 , 0
+3, 0.0 , 0
+=== End
+=== TestCase : gsl_pow_int&gosat&bfs_output/
+19, 0.0 , 0
+21, 0.0 , 0
+79, 0.0 , 0
+=== End
+=== TestCase : gsl_pow_int&gosat&dfs_output/
+18, 0.0 , 0
+64, 0.0 , 0
+67, 0.0 , 0
+=== End
+=== TestCase : gsl_pow_int&jfs&bfs_output/
+3, 0.0 , 0
+5, 0.0 , 0
+8, 0.0 , 0
+12, 0.0 , 0
+15, 0.0 , 0
+18, 0.0 , 0
+20, 0.0 , 0
+22, 0.0 , 0
+62, 0.0 , 0
+114, 0.0 , 0
+120, 0.0 , 0
+=== End
+=== TestCase : gsl_pow_int&jfs&dfs_output/
+3, 0.0 , 0
+5, 0.0 , 0
+8, 0.0 , 0
+48, 0.0 , 0
+100, 0.0 , 0
+105, 0.0 , 0
+316, 0.0 , 0
+316, 0.0 , 0
+316, 0.0 , 0
+316, 0.0 , 0
+=== End
+=== TestCase : gsl_pow_int&mathsat5&bfs_output/
+2, 0.0 , 0
+3, 0.0 , 0
+=== End
+=== TestCase : gsl_pow_int&mathsat5&dfs_output/
+1, 0.0 , 0
+2, 0.0 , 0
+=== End
+=== TestCase : gsl_pow_int&smt&bfs_output/
+6, 0.0 , 0
+11, 0.0 , 0
+44, 0.0 , 0
+45, 0.0 , 0
+45, 0.0 , 0
+45, 0.0 , 0
+67, 0.0 , 0
+71, 0.0 , 0
+150, 0.0 , 0
+=== End
+=== TestCase : gsl_pow_int&smt&dfs_output/:
+=== End

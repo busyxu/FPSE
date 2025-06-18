@@ -1,0 +1,27 @@
+Folders that are NOT our targets:
+
+block, bspline(too complicated, maybe later), cheb (too simple), combination (too simple), const (too simple),
+dht(too simple), err (too simple), fft (not very good, too long complex computations), fit (simple or small code),
+rng(simple),
+
+Record:
+
+good candidate:
+                                             folder
+1. complex.c             2000 2000 10        complex
+2. integration.c         2000 2000 10        integration
+3. gsl_cdf_binomial_P.c  2000 2000 10        cdf
+4. deriv_driver.c        2000 2000 10        deriv, diff (similar way)
+5. gsl_sf_bessel_sin_pi4_e.c 5000 2000 10    special function
+6. gsl_sf_bessel_I1_scaled_e_gsl 2000 2000 10  special function
+
+maybe: needs parameter tuning
+
+1. klee_gslSortVectorLargest.c
+2. blas_driver.c (needs further inspection)
+
+
+not good candidate:
+
+1. gsl_poly_solve_quadratic_driver.c (complex condition in main path)
+2. jacobi_driver_gsl.c (no hit for 5 minutes)

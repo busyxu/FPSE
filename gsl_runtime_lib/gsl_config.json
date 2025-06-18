@@ -1,0 +1,5 @@
+{
+  "project_linked_libs": "-L/home/aaa/gsl_runtime_lib/ -lgslcblas",
+  "project_function_type_json_file": "/home/aaa/gsl_runtime_lib/gsl_functions_info.json",
+  "project_no_main_obj_file": "/home/aaa/gsl_runtime_lib/libgsl.so"
+}

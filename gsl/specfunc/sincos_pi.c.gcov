@@ -1,0 +1,247 @@
+        -:    0:Source:sincos_pi.c
+        -:    0:Graph:sincos_pi.gcno
+        -:    0:Data:-
+        -:    0:Runs:0
+        -:    0:Programs:0
+        -:    1:/* specfunc/sincos_pi.c
+        -:    2: * 
+        -:    3: * Copyright (C) 2017 Gerard Jungman, Konrad Griessinger (konradg@gmx.net)
+        -:    4: * 
+        -:    5: * This program is free software; you can redistribute it and/or modify
+        -:    6: * it under the terms of the GNU General Public License as published by
+        -:    7: * the Free Software Foundation; either version 3 of the License, or (at
+        -:    8: * your option) any later version.
+        -:    9: * 
+        -:   10: * This program is distributed in the hope that it will be useful, but
+        -:   11: * WITHOUT ANY WARRANTY; without even the implied warranty of
+        -:   12: * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+        -:   13: * General Public License for more details.
+        -:   14: * 
+        -:   15: * You should have received a copy of the GNU General Public License
+        -:   16: * along with this program; if not, write to the Free Software
+        -:   17: * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+        -:   18: */
+        -:   19:
+        -:   20:/* routines for computing sin(pi*x) and cos(pi*x), respectively, with argument reduction */
+        -:   21:
+        -:   22:#include <math.h>
+        -:   23:#include <gsl/gsl_math.h>
+        -:   24:#include <gsl/gsl_sf_trig.h>
+        -:   25:#include <gsl/gsl_errno.h>
+        -:   26:#include <gsl/gsl_sf_sincos_pi.h>
+        -:   27:
+        -:   28:/* Any double precision number bigger than this is automatically an even integer. */
+        -:   29:#define TWOBIG (2.0 / GSL_DBL_EPSILON)
+        -:   30:
+        -:   31:/* routine computing sin(pi*x) valid for |x| <= 0.25 using a Taylor expansion around the origin and otherwise a rational approximation from the reference below. Spot-checked to give around 2e-16 relative accuracy. */
+        -:   32:/* I. Koren and O. Zinaty. Evaluating elementary functions in a numerical
+        -:   33:coprocessor based on rational approximations. IEEE Transactions on
+        -:   34:Computers, Vol.39, No.8, August 1990, pp 1030-1037. */
+        -:   35:/*
+        -:   36:static int
+        -:   37:sin_pi_koren(const double x, gsl_sf_result *result)
+        -:   38:{
+        -:   39:  result->val = 0.0;
+        -:   40:  result->err = 0.0;
+        -:   41:  if (16.0*fabs(x) < 1.0) {
+        -:   42:    const double y = M_PI * x;
+        -:   43:    const double a = y*y;
+        -:   44:    result->val = y*(1.0 - a*(1.0 - a*(1.0 - a*(1.0 - a*(1.0 - a/110.0)/72.0)/42.0)/20.0)/6.0);
+        -:   45:  }
+        -:   46:  else {
+        -:   47:    const double a0 = 1805490264.690988571178600370234394843221;
+        -:   48:    const double a1 = -164384678.227499837726129612587952660511;
+        -:   49:    const double a2 =    3664210.647581261810227924465160827365;
+        -:   50:    const double a3 =     -28904.140246461781357223741935980097;
+        -:   51:    const double a4 =         76.568981088717405810132543523682;
+        -:   52:    const double b0 = 2298821602.638922662086487520330827251172;
+        -:   53:    const double b1 =   27037050.118894436776624866648235591988;
+        -:   54:    const double b2 =     155791.388546947693206469423979505671;
+        -:   55:    const double b3 =        540.567501261284024767779280700089;
+        -:   56:    const double t = 16.0*x*x;
+        -:   57:    result->val = 4.0*x*(((( a4*t + a3 )*t + a2 )*t + a1 )*t + a0)/(((( t + b3 )*t + b2 )*t + b1 )*t + b0);
+        -:   58:  }
+        -:   59:  
+        -:   60:  result->err = GSL_DBL_EPSILON*fabs(result->val);
+        -:   61:  
+        -:   62:  return GSL_SUCCESS;
+        -:   63:}
+        -:   64:*/
+        -:   65:
+        -:   66:/* routine computing cos(pi*x) valid for |x| <= 0.25 using a Taylor expansion around the origin and otherwise a rational approximation from the reference below. Spot-checked to give around 2e-16 relative accuracy. */
+        -:   67:/* I. Koren and O. Zinaty. Evaluating elementary functions in a numerical
+        -:   68:coprocessor based on rational approximations. IEEE Transactions on
+        -:   69:Computers, Vol.39, No.8, August 1990, pp 1030-1037. */
+        -:   70:/*
+        -:   71:static int
+        -:   72:cos_pi_koren(const double x, gsl_sf_result *result)
+        -:   73:{
+        -:   74:  result->val = 0.0;
+        -:   75:  result->err = 0.0;
+        -:   76:  if (20.0*fabs(x) < 1.0) {
+        -:   77:    const double y = M_PI * x;
+        -:   78:    const double a = y*y;
+        -:   79:    result->val = 1.0 - 0.5*a*(1.0 - a*(1.0 - a*(1.0 - a*(1.0 - a/90.0)/56.0)/30.0)/12.0);
+        -:   80:  }
+        -:   81:  else {
+        -:   82:    const double a0 = 1090157078.174871420428849017262549038606;
+        -:   83:    const double a1 = -321324810.993150712401352959397648541681;
+        -:   84:    const double a2 =   12787876.849523878944051885325593878177;
+        -:   85:    const double a3 =    -150026.206045948110568310887166405972;
+        -:   86:    const double a4 =        538.333564203182661664319151379451;
+        -:   87:    const double b0 = 1090157078.174871420428867295670039506886;
+        -:   88:    const double b1 =   14907035.776643879767410969509628406502;
+        -:   89:    const double b2 =     101855.811943661368302608146695082218;
+        -:   90:    const double b3 =        429.772865107391823245671264489311;
+        -:   91:    const double t = 16.0*x*x;
+        -:   92:    result->val = (((( a4*t + a3 )*t + a2 )*t + a1 )*t + a0)/(((( t + b3 )*t + b2 )*t + b1 )*t + b0);
+        -:   93:  }
+        -:   94:  
+        -:   95:  result->err = GSL_DBL_EPSILON*fabs(result->val);
+        -:   96:  
+        -:   97:  return GSL_SUCCESS;
+        -:   98:}
+        -:   99:*/
+        -:  100:
+        -:  101:/* routine computing sin(pi*x) using a Taylor expansion around the origin and otherwise the library function. */
+        -:  102:static int
+        -:  103:sin_pi_taylor(const double x, gsl_sf_result *result)
+        -:  104:{
+    #####:  105:  result->val = 0.0;
+    #####:  106:  result->err = 0.0;
+    #####:  107:  if (16.0*fabs(x) < 1.0) {
+    #####:  108:    const double y = M_PI * x;
+    #####:  109:    const double a = y*y;
+    #####:  110:    result->val = y*(1.0 - a*(1.0 - a*(1.0 - a*(1.0 - a*(1.0 - a/110.0)/72.0)/42.0)/20.0)/6.0);
+    #####:  111:  }
+        -:  112:  else {
+    #####:  113:    result->val = sin(M_PI*x);
+        -:  114:  }
+        -:  115:  
+    #####:  116:  result->err = GSL_DBL_EPSILON*fabs(result->val);
+        -:  117:  
+    #####:  118:  return GSL_SUCCESS;
+        -:  119:}
+        -:  120:
+        -:  121:/* routine computing sin(pi*x) using a Taylor expansion around the origin and otherwise the library function. */
+        -:  122:static int
+        -:  123:cos_pi_taylor(const double x, gsl_sf_result *result)
+        -:  124:{
+    #####:  125:  result->val = 0.0;
+    #####:  126:  result->err = 0.0;
+    #####:  127:  if (20.0*fabs(x) < 1.0) {
+    #####:  128:    const double y = M_PI * x;
+    #####:  129:    const double a = y*y;
+    #####:  130:    result->val = 1.0 - 0.5*a*(1.0 - a*(1.0 - a*(1.0 - a*(1.0 - a/90.0)/56.0)/30.0)/12.0);
+    #####:  131:  }
+        -:  132:  else {
+    #####:  133:    result->val = cos(M_PI*x);
+        -:  134:  }
+        -:  135:  
+    #####:  136:  result->err = GSL_DBL_EPSILON*fabs(result->val);
+        -:  137:  
+    #####:  138:  return GSL_SUCCESS;
+        -:  139:}
+        -:  140:
+        -:  141:int
+        -:  142:gsl_sf_sin_pi_e(const double x, gsl_sf_result *result)
+        -:  143:{
+    #####:  144:  double intx = 0.0, fracx = 0.0;
+        -:  145:  long q;
+    #####:  146:  int sign = 1, status;
+        -:  147:
+    #####:  148:  result->val = 0.0;
+    #####:  149:  result->err = 0.0;
+    #####:  150:  fracx = modf(x,&intx);
+    #####:  151:  if (fracx == 0.0) return GSL_SUCCESS;
+    #####:  152:  if(fabs(intx) >= TWOBIG) return GSL_SUCCESS; /* to be sure. Actually should be covered by the line above */
+        -:  153:
+    #####:  154:  q = ( ( (intx >= LONG_MIN) && (intx <= LONG_MAX) ) ? intx : fmod(intx, 2.0) );
+    #####:  155:  sign = ( q % 2 ? -1 : 1 );
+        -:  156:
+        -:  157:  /* int sign = 1 - 2*((int)round(fmod(fabs(intx),2.0))); */
+    #####:  158:  if (fabs(fracx) == 0.5) { /* probably unnecessary */
+    #####:  159:    if (fracx < 0.0) sign = -sign;
+    #####:  160:    result->val = ( sign != 1 ? -1.0 : 1.0 );
+    #####:  161:    return GSL_SUCCESS;
+        -:  162:  }
+    #####:  163:  if (fabs(fracx) > 0.5) {
+    #####:  164:    sign = -sign;
+    #####:  165:    fracx = ( fracx > 0.0 ? fracx-1.0 : fracx+1.0 );
+    #####:  166:  }
+        -:  167:
+    #####:  168:  status = 0;
+    #####:  169:  if (fracx > 0.25) {
+    #####:  170:    status = cos_pi_taylor((fracx-0.5), result);
+    #####:  171:  }
+    #####:  172:  else if (fracx < -0.25) {
+    #####:  173:    status = cos_pi_taylor((fracx+0.5), result);
+    #####:  174:    sign = -sign;
+    #####:  175:  }
+        -:  176:  else {
+    #####:  177:    status = sin_pi_taylor(fracx, result);
+        -:  178:  }
+    #####:  179:  if (sign != 1) result->val = -result->val;
+    #####:  180:  return status;
+    #####:  181:}
+        -:  182:
+        -:  183:int
+        -:  184:gsl_sf_cos_pi_e(const double x, gsl_sf_result *result)
+        -:  185:{
+    #####:  186:  double intx = 0.0, fracx = 0.0;
+        -:  187:  long q;
+    #####:  188:  int sign = 1, status;
+        -:  189:
+    #####:  190:  result->val = 0.0;
+    #####:  191:  result->err = 0.0;
+    #####:  192:  fracx = modf(x,&intx);
+    #####:  193:  if (fabs(fracx) == 0.5) return GSL_SUCCESS;
+        -:  194:  
+    #####:  195:  if(fabs(intx) >= TWOBIG) {
+    #####:  196:    result->val = 1.0;
+    #####:  197:    return GSL_SUCCESS;
+        -:  198:  }
+        -:  199:
+    #####:  200:  q = ( ( (intx >= LONG_MIN) && (intx <= LONG_MAX) ) ? intx : fmod(intx, 2.0) );
+    #####:  201:  sign = ( q % 2 ? -1 : 1 );
+        -:  202:
+        -:  203:  /* int sign = 1 - 2*((int)round(fmod(fabs(intx),2.0))); */
+    #####:  204:  if (fracx == 0.0) { /* probably unnecessary */
+    #####:  205:    result->val = ( sign != 1 ? -1.0 : 1.0 );
+    #####:  206:    return GSL_SUCCESS;
+        -:  207:  }
+    #####:  208:  if (fabs(fracx) > 0.5) {
+    #####:  209:    sign = -sign;
+    #####:  210:    fracx = ( fracx > 0.0 ? fracx-1.0 : fracx+1.0 );
+    #####:  211:  }
+        -:  212:
+    #####:  213:  status = 0;
+    #####:  214:  if (fracx > 0.25) {
+    #####:  215:    status = sin_pi_taylor((fracx-0.5), result);
+    #####:  216:    sign = -sign;
+    #####:  217:  }
+    #####:  218:  else if (fracx < -0.25) {
+    #####:  219:    status = sin_pi_taylor((fracx+0.5), result);
+    #####:  220:  }
+        -:  221:  else {
+    #####:  222:    status = cos_pi_taylor(fracx, result);
+        -:  223:  }
+    #####:  224:  if (sign != 1) result->val = -result->val;
+    #####:  225:  return status;
+    #####:  226:}
+        -:  227:
+        -:  228:/*-*-*-*-*-*-*-*-*-* Functions w/ Natural Prototypes *-*-*-*-*-*-*-*-*-*-*/
+        -:  229:
+        -:  230:#include "eval.h"
+        -:  231:
+        -:  232:double
+        -:  233:gsl_sf_sin_pi(const double x)
+        -:  234:{
+    #####:  235:  EVAL_RESULT(gsl_sf_sin_pi_e(x, &result));
+    #####:  236:}
+        -:  237:
+        -:  238:double
+        -:  239:gsl_sf_cos_pi(const double x)
+        -:  240:{
+    #####:  241:  EVAL_RESULT(gsl_sf_cos_pi_e(x, &result));
+    #####:  242:}

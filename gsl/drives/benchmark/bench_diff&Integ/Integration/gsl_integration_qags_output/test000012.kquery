@@ -1,0 +1,15 @@
+array a[8] : w32 -> w8 = symbolic
+array b[8] : w32 -> w8 = symbolic
+array epsabs[8] : w32 -> w8 = symbolic
+array epsrel[8] : w32 -> w8 = symbolic
+(query [(FOLe (ReadLSB w64 0 epsabs)
+               0)
+         (Eq false
+             (FOLt N0:(ReadLSB w64 0 epsrel)
+                   4398046511104000000))
+         (Eq false (FOLt N0 4183757152651862041))
+         (FMulUnderflowCheck 4607182418800017408
+                             (FMul w64 4602678819172646912
+                                       (FAdd w64 (ReadLSB w64 0 a)
+                                                 (ReadLSB w64 0 b))))]
+        false)

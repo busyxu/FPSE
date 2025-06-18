@@ -1,0 +1,3 @@
+>> gcc -c FPCheck.cpp
+>> ar -rc  libFPCheck_plus.a FPCheck.o /usr/local/lib/libgmp.a
+

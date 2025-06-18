@@ -1,0 +1,126 @@
+gsl_acosh&bitwuzla&bfs_output/ , 100.0 , 34, 434
+gsl_acosh&bitwuzla&dfs_output/ , 100.0 , 34, 435
+gsl_acosh&cvc5-real&bfs_output/ , 100.0 , 34, 113
+gsl_acosh&cvc5-real&dfs_output/ , 100.0 , 34, 112
+gsl_acosh&dreal-is&bfs_output/ , 100.0 , 34, 112
+gsl_acosh&dreal-is&dfs_output/ , 0,
+gsl_acosh&gosat&bfs_output/ , 100.0 , 34, 115
+gsl_acosh&gosat&dfs_output/ , 100.0 , 34, 115
+gsl_acosh&jfs&bfs_output/ , 0,
+gsl_acosh&jfs&dfs_output/ , 100.0 , 34, 419
+gsl_acosh&mathsat5&bfs_output/ , 100.0 , 34, 109
+gsl_acosh&mathsat5&dfs_output/ , 100.0 , 34, 434
+gsl_acosh&smt&bfs_output/ , 100.0 , 34, 434
+gsl_acosh&smt&dfs_output/ , 100.0 , 34, 434
+gsl_asinh&bitwuzla&bfs_output/ , 100.0 , 34, 434
+gsl_asinh&bitwuzla&dfs_output/ , 100.0 , 34, 434
+gsl_asinh&cvc5-real&bfs_output/ , 100.0 , 34, 112
+gsl_asinh&cvc5-real&dfs_output/ , 100.0 , 34, 113
+gsl_asinh&dreal-is&bfs_output/ , 100.0 , 34, 112
+gsl_asinh&dreal-is&dfs_output/ , 100.0 , 34, 120
+gsl_asinh&gosat&bfs_output/ , 100.0 , 34, 112
+gsl_asinh&gosat&dfs_output/ , 100.0 , 34, 119
+gsl_asinh&jfs&bfs_output/ , 100.0 , 34, 435
+gsl_asinh&jfs&dfs_output/ , 100.0 , 34, 434
+gsl_asinh&mathsat5&bfs_output/ , 100.0 , 34, 435
+gsl_asinh&mathsat5&dfs_output/ , 100.0 , 34, 434
+gsl_asinh&smt&bfs_output/ , 100.0 , 34, 435
+gsl_asinh&smt&dfs_output/ , 100.0 , 34, 413
+gsl_atanh&bitwuzla&bfs_output/ , 100.0 , 34, 435
+gsl_atanh&bitwuzla&dfs_output/ , 100.0 , 34, 435
+gsl_atanh&cvc5-real&bfs_output/ , 100.0 , 34, 120
+gsl_atanh&cvc5-real&dfs_output/ , 100.0 , 34, 114
+gsl_atanh&dreal-is&bfs_output/ , 100.0 , 34, 117
+gsl_atanh&dreal-is&dfs_output/ , 100.0 , 34, 114
+gsl_atanh&gosat&bfs_output/ , 0,
+gsl_atanh&gosat&dfs_output/ , 100.0 , 34, 115
+gsl_atanh&jfs&bfs_output/ , 100.0 , 34, 428
+gsl_atanh&jfs&dfs_output/ , 100.0 , 34, 419
+gsl_atanh&mathsat5&bfs_output/ , 100.0 , 34, 418
+gsl_atanh&mathsat5&dfs_output/ , 100.0 , 34, 435
+gsl_atanh&smt&bfs_output/ , 100.0 , 34, 424
+gsl_atanh&smt&dfs_output/ , 100.0 , 34, 407
+gsl_expm1&bitwuzla&bfs_output/ , 0,
+gsl_expm1&bitwuzla&dfs_output/ , 0,
+gsl_expm1&cvc5-real&bfs_output/ , 0,
+gsl_expm1&cvc5-real&dfs_output/ , 0,
+gsl_expm1&dreal-is&bfs_output/ , 0,
+gsl_expm1&dreal-is&dfs_output/ , 0,
+gsl_expm1&gosat&bfs_output/ , 0,
+gsl_expm1&gosat&dfs_output/ , 100.0 , 13, 251
+gsl_expm1&jfs&bfs_output/ , 0,
+gsl_expm1&jfs&dfs_output/ , 100.0 , 13, 428
+gsl_expm1&mathsat5&bfs_output/ , 0,
+gsl_expm1&mathsat5&dfs_output/ , 0,
+gsl_expm1&smt&bfs_output/ , 0,
+gsl_expm1&smt&dfs_output/ , 0,
+gsl_hypot3&bitwuzla&bfs_output/ , 100.0 , 26, 434
+gsl_hypot3&bitwuzla&dfs_output/ , 0,
+gsl_hypot3&cvc5-real&bfs_output/ , 100.0 , 26, 435
+gsl_hypot3&cvc5-real&dfs_output/ , 100.0 , 26, 435
+gsl_hypot3&dreal-is&bfs_output/ , 0,
+gsl_hypot3&dreal-is&dfs_output/ , 0,
+gsl_hypot3&gosat&bfs_output/ , 100.0 , 26, 434
+gsl_hypot3&gosat&dfs_output/ , 100.0 , 26, 434
+gsl_hypot3&jfs&bfs_output/ , 100.0 , 26, 435
+gsl_hypot3&jfs&dfs_output/ , 100.0 , 26, 434
+gsl_hypot3&mathsat5&bfs_output/ , 100.0 , 26, 435
+gsl_hypot3&mathsat5&dfs_output/ , 100.0 , 26, 434
+gsl_hypot3&smt&bfs_output/ , 100.0 , 26, 434
+gsl_hypot3&smt&dfs_output/ , 100.0 , 26, 418
+gsl_hypot&bitwuzla&bfs_output/ , 100.0 , 26, 435
+gsl_hypot&bitwuzla&dfs_output/ , 100.0 , 26, 434
+gsl_hypot&cvc5-real&bfs_output/ , 0,
+gsl_hypot&cvc5-real&dfs_output/ , 100.0 , 26, 108
+gsl_hypot&dreal-is&bfs_output/ , 0,
+gsl_hypot&dreal-is&dfs_output/ , 100.0 , 26, 114
+gsl_hypot&gosat&bfs_output/ , 100.0 , 26, 242
+gsl_hypot&gosat&dfs_output/ , 100.0 , 26, 252
+gsl_hypot&jfs&bfs_output/ , 0,
+gsl_hypot&jfs&dfs_output/ , 0,
+gsl_hypot&mathsat5&bfs_output/ , 0,
+gsl_hypot&mathsat5&dfs_output/ , 100.0 , 26, 435
+gsl_hypot&smt&bfs_output/ , 100.0 , 26, 435
+gsl_hypot&smt&dfs_output/ , 100.0 , 26, 434
+gsl_ldexp&bitwuzla&bfs_output/ , 0,
+gsl_ldexp&bitwuzla&dfs_output/ , 100.0 , 33, 435
+gsl_ldexp&cvc5-real&bfs_output/ , 0,
+gsl_ldexp&cvc5-real&dfs_output/ , 0,
+gsl_ldexp&dreal-is&bfs_output/ , 0,
+gsl_ldexp&dreal-is&dfs_output/ , 100.0 , 33, 109
+gsl_ldexp&gosat&bfs_output/ , 0,
+gsl_ldexp&gosat&dfs_output/ , 100.0 , 33, 435
+gsl_ldexp&jfs&bfs_output/ , 0,
+gsl_ldexp&jfs&dfs_output/ , 100.0 , 33, 418
+gsl_ldexp&mathsat5&bfs_output/ , 0,
+gsl_ldexp&mathsat5&dfs_output/ , 0,
+gsl_ldexp&smt&bfs_output/ , 0,
+gsl_ldexp&smt&dfs_output/ , 0,
+gsl_log1p&bitwuzla&bfs_output/ , 100.0 , 3, 435
+gsl_log1p&bitwuzla&dfs_output/ , 0,
+gsl_log1p&cvc5-real&bfs_output/ , 0,
+gsl_log1p&cvc5-real&dfs_output/ , 0,
+gsl_log1p&dreal-is&bfs_output/ , 100.0 , 3, 118
+gsl_log1p&dreal-is&dfs_output/ , 100.0 , 3, 113
+gsl_log1p&gosat&bfs_output/ , 100.0 , 3, 247
+gsl_log1p&gosat&dfs_output/ , 100.0 , 3, 252
+gsl_log1p&jfs&bfs_output/ , 100.0 , 3, 415
+gsl_log1p&jfs&dfs_output/ , 100.0 , 3, 416
+gsl_log1p&mathsat5&bfs_output/ , 100.0 , 3, 435
+gsl_log1p&mathsat5&dfs_output/ , 0,
+gsl_log1p&smt&bfs_output/ , 100.0 , 3, 419
+gsl_log1p&smt&dfs_output/ , 0,
+gsl_pow_int&bitwuzla&bfs_output/ , 0.0 , 0, 435
+gsl_pow_int&bitwuzla&dfs_output/ , 0.0 , 0, 435
+gsl_pow_int&cvc5-real&bfs_output/ , 0,
+gsl_pow_int&cvc5-real&dfs_output/ , 0,
+gsl_pow_int&dreal-is&bfs_output/ , 0.0 , 0, 435
+gsl_pow_int&dreal-is&dfs_output/ , 0.0 , 0, 434
+gsl_pow_int&gosat&bfs_output/ , 0.0 , 0, 182
+gsl_pow_int&gosat&dfs_output/ , 0.0 , 0, 180
+gsl_pow_int&jfs&bfs_output/ , 0.0 , 0, 435
+gsl_pow_int&jfs&dfs_output/ , 0.0 , 0, 427
+gsl_pow_int&mathsat5&bfs_output/ , 0.0 , 0, 435
+gsl_pow_int&mathsat5&dfs_output/ , 0.0 , 0, 435
+gsl_pow_int&smt&bfs_output/ , 0.0 , 0, 435
+gsl_pow_int&smt&dfs_output/: , 0,

@@ -1,0 +1,3 @@
+=== TestCase : gsl_complex_abs
+1, 100.0 , 2
+=== End

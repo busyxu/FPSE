@@ -1,0 +1,689 @@
+KLEE: KLEE: WATCHDOG: watching 7622
+
+KLEE: output directory is "/home/aaa/gsl/drives/bench_Integration/Integration/gsl_integration_qags_output"
+KLEE: Using Z3 solver backend
+KLEE: Replacing function "__isnanf" with "klee_internal_isnanf"
+KLEE: Replacing function "__isnan" with "klee_internal_isnan"
+KLEE: Replacing function "__isnanl" with "klee_internal_isnanl"
+KLEE: Replacing function "__isinff" with "klee_internal_isinff"
+KLEE: Replacing function "__isinf" with "klee_internal_isinf"
+KLEE: Replacing function "__isinfl" with "klee_internal_isinfl"
+KLEE: Replacing function "__fpclassifyf" with "klee_internal_fpclassifyf"
+KLEE: Replacing function "__fpclassify" with "klee_internal_fpclassify"
+KLEE: Replacing function "__finitef" with "klee_internal_finitef"
+KLEE: Replacing function "__finite" with "klee_internal_finite"
+KLEE: Replacing function "sqrt" with "klee_internal_sqrt"
+KLEE: Replacing function "fabs" with "klee_internal_fabs"
+KLEE: WARNING ONCE: function "gsl_ieee_set_mode" has inline asm
++++++++++++++++ state first:   %retval = alloca i32, align 4
+cons size:0
+KLEE: WARNING ONCE: Alignment of memory from call "malloc" is not modelled. Using alignment of 8.
+KLEE: WARNING ONCE: calling external: fprintf(140581937477248, 94125395614688, 94125396140688, 240, 94125395482088, 94125396119168) at stream.c:46 1
+gsl: qags.c:240: ERROR: tolerance cannot be achieved with given epsabs and epsrel
+KLEE: WARNING ONCE: calling external: fflush(140581937477472) at error.c:44 12
+Default GSL error handler invoked.
+KLEE: ERROR: error.c:47: abort failure
+KLEE: NOTE: now ignoring this error at this location
++++++++++++++++ state end
++++++++++++++++ state first:   %90 = load double, double* %16, align 8, !dbg !17965
+cons size:2
+==============call jfs solver==============
+by yx ========>:
+(FOLe (ReadLSB w64 0 epsabs)
+       0)
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4398046511104000000))
+========
+=================JFS: JFS Result: SAT=================
+epsabs
+[255,127,255,255,255,255,233,255,]
+epsrel
+[255,255,255,255,255,255,255,255,]
+KLEE: WARNING: FUZZ: JFS evaluate SUCCESS !
+==============call jfs solver==============
+by yx ========>:
+(FOLe (ReadLSB w64 0 epsabs)
+       0)
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4398046511104000000))
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4183757152651862041))
+(FAddOverflowCheck (ReadLSB w64 0 a)
+                    (ReadLSB w64 0 b))
+========
+=================JFS: JFS Result: SAT=================
+b
+[255,0,0,0,0,0,32,255,]
+epsabs
+[255,255,0,0,0,0,0,255,]
+epsrel
+[255,255,255,255,127,255,255,255,]
+a
+[255,255,255,255,255,255,239,255,]
+KLEE: WARNING: FUZZ: JFS evaluate SUCCESS !
+KLEE: ERROR: qk.c:35: FloatPointCheck: Common Overflow found !
+KLEE: NOTE: now ignoring this error at this location
+==============call jfs solver==============
+by yx ========>:
+(FOLe (ReadLSB w64 0 epsabs)
+       0)
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4398046511104000000))
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4183757152651862041))
+(FAddUnderflowCheck (ReadLSB w64 0 a)
+                     (ReadLSB w64 0 b))
+========
+=================JFS: JFS Result: SAT=================
+b
+[0,255,255,255,255,0,0,0,]
+epsabs
+[0,0,0,0,0,0,0,0,]
+epsrel
+[0,255,255,0,255,255,255,255,]
+a
+[255,255,0,0,0,0,0,0,]
+KLEE: WARNING: FUZZ: JFS evaluate SUCCESS !
+KLEE: ERROR: qk.c:35: FloatPointCheck: Common Underflow found !
+KLEE: NOTE: now ignoring this error at this location
+==============call jfs solver==============
+by yx ========>:
+(FOLe (ReadLSB w64 0 epsabs)
+       0)
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4398046511104000000))
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4183757152651862041))
+(FAddAccuracyCheck (ReadLSB w64 0 a)
+                    (ReadLSB w64 0 b))
+========
+=================JFS: JFS Result: SAT=================
+b
+[0,112,0,0,127,255,0,255,]
+epsabs
+[255,255,0,0,0,0,0,255,]
+epsrel
+[255,255,255,255,127,255,255,255,]
+a
+[255,255,255,255,255,255,0,0,]
+KLEE: WARNING: FUZZ: JFS evaluate SUCCESS !
+KLEE: ERROR: qk.c:35: FloatPointCheck: Common Accuracy found !
+KLEE: NOTE: now ignoring this error at this location
++++++++++++++++ state end
++++++++++++++++ state first:   br label %93, !dbg !17968, !llvm.loop !17970
+cons size:3
+==============call jfs solver==============
+by yx ========>:
+(FOLe (ReadLSB w64 0 epsabs)
+       0)
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4398046511104000000))
+(FOLt (ReadLSB w64 0 epsrel)
+       4183757152651862041)
+========
+KLEE: WARNING: FUZZ: JFS solving TIMEOUT! Remove this state !
++++++++++++++++ state end
++++++++++++++++ state first:   %50 = fmul double 5.000000e-01, %49, !dbg !17875
+cons size:3
+==============call jfs solver==============
+by yx ========>:
+(FOLe (ReadLSB w64 0 epsabs)
+       0)
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4398046511104000000))
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4183757152651862041))
+========
+=================JFS: JFS Result: SAT=================
+epsabs
+[255,127,255,255,255,255,233,255,]
+epsrel
+[255,255,255,255,255,255,255,255,]
+KLEE: WARNING: FUZZ: JFS evaluate SUCCESS !
+==============call jfs solver==============
+by yx ========>:
+(FOLe (ReadLSB w64 0 epsabs)
+       0)
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4398046511104000000))
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4183757152651862041))
+(FMulOverflowCheck 4602678819172646912
+                    (FAdd w64 (ReadLSB w64 0 a)
+                              (ReadLSB w64 0 b)))
+========
+KLEE: WARNING: FUZZ: JFS solving TIMEOUT! Remove this state !
+==============call jfs solver==============
+by yx ========>:
+(FOLe (ReadLSB w64 0 epsabs)
+       0)
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4398046511104000000))
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4183757152651862041))
+(FMulUnderflowCheck 4602678819172646912
+                     (FAdd w64 (ReadLSB w64 0 a)
+                               (ReadLSB w64 0 b)))
+========
+=================JFS: JFS Result: SAT=================
+b
+[0,255,255,255,255,0,0,0,]
+epsabs
+[0,0,0,0,0,0,0,0,]
+epsrel
+[0,255,255,0,255,255,255,255,]
+a
+[255,255,0,0,0,0,0,0,]
+KLEE: WARNING: FUZZ: JFS evaluate SUCCESS !
+KLEE: ERROR: qk.c:35: FloatPointCheck: Common Underflow found !
+KLEE: NOTE: now ignoring this error at this location
+==============call jfs solver==============
+by yx ========>:
+(FOLe (ReadLSB w64 0 epsabs)
+       0)
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4398046511104000000))
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4183757152651862041))
+(FMulAccuracyCheck 4602678819172646912
+                    (FAdd w64 (ReadLSB w64 0 a)
+                              (ReadLSB w64 0 b)))
+========
+=================JFS: JFS Result: SAT=================
+b
+[0,255,255,255,255,0,0,0,]
+epsabs
+[0,0,0,0,0,0,0,0,]
+epsrel
+[0,255,255,0,255,255,255,255,]
+a
+[255,255,0,0,0,0,0,0,]
+KLEE: WARNING: FUZZ: JFS evaluate SUCCESS !
+KLEE: ERROR: qk.c:35: FloatPointCheck: Common Accuracy found !
+KLEE: NOTE: now ignoring this error at this location
++++++++++++++++ state end
++++++++++++++++ state first:   store double %50, double* %27, align 8, !dbg !17871
+cons size:3
+==============call jfs solver==============
+by yx ========>:
+(FOLe (ReadLSB w64 0 epsabs)
+       0)
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4398046511104000000))
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4183757152651862041))
+========
+=================JFS: JFS Result: SAT=================
+epsabs
+[255,127,255,255,255,255,233,255,]
+epsrel
+[255,255,255,255,255,255,255,255,]
+KLEE: WARNING: FUZZ: JFS evaluate SUCCESS !
+==============call jfs solver==============
+by yx ========>:
+(FOLe (ReadLSB w64 0 epsabs)
+       0)
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4398046511104000000))
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4183757152651862041))
+(FSubOverflowCheck (ReadLSB w64 0 b)
+                    (ReadLSB w64 0 a))
+========
+=================JFS: JFS Result: SAT=================
+b
+[255,255,255,255,255,255,239,255,]
+epsabs
+[255,255,255,255,255,255,0,255,]
+epsrel
+[255,255,255,255,255,255,255,255,]
+a
+[255,255,255,255,0,0,0,0,]
+KLEE: WARNING: FUZZ: JFS evaluate SUCCESS !
+KLEE: ERROR: qk.c:36: FloatPointCheck: Common Overflow found !
+KLEE: NOTE: now ignoring this error at this location
+==============call jfs solver==============
+by yx ========>:
+(FOLe (ReadLSB w64 0 epsabs)
+       0)
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4398046511104000000))
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4183757152651862041))
+(FSubUnderflowCheck (ReadLSB w64 0 b)
+                     (ReadLSB w64 0 a))
+========
+=================JFS: JFS Result: SAT=================
+b
+[255,255,0,0,0,0,0,0,]
+epsabs
+[0,0,0,0,0,0,0,0,]
+epsrel
+[0,255,255,0,255,255,255,255,]
+a
+[0,255,255,255,255,0,0,0,]
+KLEE: WARNING: FUZZ: JFS evaluate SUCCESS !
+KLEE: ERROR: qk.c:36: FloatPointCheck: Common Underflow found !
+KLEE: NOTE: now ignoring this error at this location
+==============call jfs solver==============
+by yx ========>:
+(FOLe (ReadLSB w64 0 epsabs)
+       0)
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4398046511104000000))
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4183757152651862041))
+(FSubAccuracyCheck (ReadLSB w64 0 b)
+                    (ReadLSB w64 0 a))
+========
+=================JFS: JFS Result: SAT=================
+b
+[255,255,255,255,255,255,0,0,]
+epsabs
+[255,255,0,0,0,0,0,255,]
+epsrel
+[255,255,255,255,127,255,255,255,]
+a
+[0,112,0,0,127,255,0,255,]
+KLEE: WARNING: FUZZ: JFS evaluate SUCCESS !
+KLEE: ERROR: qk.c:36: FloatPointCheck: Common Accuracy found !
+KLEE: NOTE: now ignoring this error at this location
++++++++++++++++ state end
++++++++++++++++ state first:   %54 = fmul double 5.000000e-01, %53, !dbg !17881
+cons size:3
+==============call jfs solver==============
+by yx ========>:
+(FOLe (ReadLSB w64 0 epsabs)
+       0)
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4398046511104000000))
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4183757152651862041))
+========
+=================JFS: JFS Result: SAT=================
+epsabs
+[255,127,255,255,255,255,233,255,]
+epsrel
+[255,255,255,255,255,255,255,255,]
+KLEE: WARNING: FUZZ: JFS evaluate SUCCESS !
+==============call jfs solver==============
+by yx ========>:
+(FOLe (ReadLSB w64 0 epsabs)
+       0)
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4398046511104000000))
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4183757152651862041))
+(FMulOverflowCheck 4602678819172646912
+                    (FSub w64 (ReadLSB w64 0 b)
+                              (ReadLSB w64 0 a)))
+========
+KLEE: WARNING: FUZZ: JFS solving TIMEOUT! Remove this state !
+==============call jfs solver==============
+by yx ========>:
+(FOLe (ReadLSB w64 0 epsabs)
+       0)
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4398046511104000000))
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4183757152651862041))
+(FMulUnderflowCheck 4602678819172646912
+                     (FSub w64 (ReadLSB w64 0 b)
+                               (ReadLSB w64 0 a)))
+========
+=================JFS: JFS Result: SAT=================
+b
+[255,255,0,0,0,0,0,0,]
+epsabs
+[0,0,0,0,0,0,0,0,]
+epsrel
+[0,255,255,0,255,255,255,255,]
+a
+[0,255,255,255,255,0,0,0,]
+KLEE: WARNING: FUZZ: JFS evaluate SUCCESS !
+KLEE: ERROR: qk.c:36: FloatPointCheck: Common Underflow found !
+KLEE: NOTE: now ignoring this error at this location
+==============call jfs solver==============
+by yx ========>:
+(FOLe (ReadLSB w64 0 epsabs)
+       0)
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4398046511104000000))
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4183757152651862041))
+(FMulAccuracyCheck 4602678819172646912
+                    (FSub w64 (ReadLSB w64 0 b)
+                              (ReadLSB w64 0 a)))
+========
+=================JFS: JFS Result: SAT=================
+b
+[255,255,0,0,0,0,0,0,]
+epsabs
+[0,0,0,0,0,0,0,0,]
+epsrel
+[0,255,255,0,255,255,255,255,]
+a
+[0,255,255,255,255,0,0,0,]
+KLEE: WARNING: FUZZ: JFS evaluate SUCCESS !
+KLEE: ERROR: qk.c:36: FloatPointCheck: Common Accuracy found !
+KLEE: NOTE: now ignoring this error at this location
++++++++++++++++ state end
++++++++++++++++ state first:   store double %54, double* %28, align 8, !dbg !17877
+cons size:3
+==============call jfs solver==============
+by yx ========>:
+(FOLe (ReadLSB w64 0 epsabs)
+       0)
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4398046511104000000))
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4183757152651862041))
+========
+=================JFS: JFS Result: SAT=================
+epsabs
+[255,127,255,255,255,255,233,255,]
+epsrel
+[255,255,255,255,255,255,255,255,]
+KLEE: WARNING: FUZZ: JFS evaluate SUCCESS !
+==============call jfs solver==============
+by yx ========>:
+(FOLe (ReadLSB w64 0 epsabs)
+       0)
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4398046511104000000))
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4183757152651862041))
+(FMulOverflowCheck 4607182418800017408
+                    (FMul w64 4602678819172646912
+                              (FAdd w64 (ReadLSB w64 0 a)
+                                        (ReadLSB w64 0 b))))
+========
+KLEE: WARNING: FUZZ: JFS solving TIMEOUT! Remove this state !
+==============call jfs solver==============
+by yx ========>:
+(FOLe (ReadLSB w64 0 epsabs)
+       0)
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4398046511104000000))
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4183757152651862041))
+(FMulUnderflowCheck 4607182418800017408
+                     (FMul w64 4602678819172646912
+                               (FAdd w64 (ReadLSB w64 0 a)
+                                         (ReadLSB w64 0 b))))
+========
+=================JFS: JFS Result: SAT=================
+b
+[0,255,255,255,255,0,0,0,]
+epsabs
+[0,0,0,0,0,0,0,0,]
+epsrel
+[0,255,255,0,255,255,255,255,]
+a
+[255,255,0,0,0,0,0,0,]
+KLEE: WARNING: FUZZ: JFS evaluate SUCCESS !
+KLEE: ERROR: (location information missing) FloatPointCheck: Common Underflow found !
+KLEE: NOTE: now ignoring this error at this location
+==============call jfs solver==============
+by yx ========>:
+(FOLe (ReadLSB w64 0 epsabs)
+       0)
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4398046511104000000))
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4183757152651862041))
+(FMulAccuracyCheck 4607182418800017408
+                    (FMul w64 4602678819172646912
+                              (FAdd w64 (ReadLSB w64 0 a)
+                                        (ReadLSB w64 0 b))))
+========
+KLEE: WARNING: FUZZ: JFS solving TIMEOUT! Remove this state !
++++++++++++++++ state end
++++++++++++++++ state first:   %call = call double @log(double %mul) #8
+cons size:3
+==============call jfs solver==============
+by yx ========>:
+(FOLe (ReadLSB w64 0 epsabs)
+       0)
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4398046511104000000))
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4183757152651862041))
+========
+=================JFS: JFS Result: SAT=================
+epsabs
+[255,127,255,255,255,255,233,255,]
+epsrel
+[255,255,255,255,255,255,255,255,]
+KLEE: WARNING: FUZZ: JFS evaluate SUCCESS !
+KLEE: ERROR: (location information missing) FloatPointCheck: FP Invalid found !
+KLEE: NOTE: now ignoring this error at this location
++++++++++++++++ state end
++++++++++++++++ state first:   %5 = load double, double* %x.addr, align 8
+cons size:4
+==============call jfs solver==============
+by yx ========>:
+(FOLe (ReadLSB w64 0 epsabs)
+       0)
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4398046511104000000))
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4183757152651862041))
+(Not (FOLe (FMul w64 4607182418800017408
+                      (FMul w64 4602678819172646912
+                                (FAdd w64 (ReadLSB w64 0 a)
+                                          (ReadLSB w64 0 b))))
+            0))
+========
+=================JFS: JFS Result: SAT=================
+b
+[0,0,0,0,127,0,255,255,]
+epsabs
+[255,255,0,0,0,0,0,255,]
+epsrel
+[255,255,255,255,127,255,255,255,]
+a
+[255,255,255,255,255,255,0,0,]
+KLEE: WARNING: FUZZ: JFS evaluate SUCCESS !
+==============call jfs solver==============
+by yx ========>:
+(FOLe (ReadLSB w64 0 epsabs)
+       0)
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4398046511104000000))
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4183757152651862041))
+(Not (FOLe (FMul w64 4607182418800017408
+                      (FMul w64 4602678819172646912
+                                (FAdd w64 (ReadLSB w64 0 a)
+                                          (ReadLSB w64 0 b))))
+            0))
+(FInvalidSqrtCheck w64 (FMul w64 4602678819172646912
+                                  (FAdd w64 (ReadLSB w64 0 a)
+                                            (ReadLSB w64 0 b))))
+========
+KLEE: WARNING: FUZZ: JFS solving TIMEOUT! Remove this state !
+==============call jfs solver==============
+by yx ========>:
+(FOLe (ReadLSB w64 0 epsabs)
+       0)
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4398046511104000000))
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4183757152651862041))
+(Not (FOLe (FMul w64 4607182418800017408
+                      (FMul w64 4602678819172646912
+                                (FAdd w64 (ReadLSB w64 0 a)
+                                          (ReadLSB w64 0 b))))
+            0))
+(FDivOverflowCheck (LOG w64 (FMul w64 4607182418800017408
+                                       N0:(FMul w64 4602678819172646912
+                                                    (FAdd w64 (ReadLSB w64 0 a)
+                                                              (ReadLSB w64 0 b)))))
+                    (FSqrt w64 N0))
+========
+KLEE: WARNING: FUZZ: JFS solving TIMEOUT! Remove this state !
+==============call jfs solver==============
+by yx ========>:
+(FOLe (ReadLSB w64 0 epsabs)
+       0)
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4398046511104000000))
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4183757152651862041))
+(Not (FOLe (FMul w64 4607182418800017408
+                      (FMul w64 4602678819172646912
+                                (FAdd w64 (ReadLSB w64 0 a)
+                                          (ReadLSB w64 0 b))))
+            0))
+(FDivUnderflowCheck (LOG w64 (FMul w64 4607182418800017408
+                                        N0:(FMul w64 4602678819172646912
+                                                     (FAdd w64 (ReadLSB w64 0 a)
+                                                               (ReadLSB w64 0 b)))))
+                     (FSqrt w64 N0))
+========
+KLEE: WARNING: FUZZ: JFS solving TIMEOUT! Remove this state !
+==============call jfs solver==============
+by yx ========>:
+(FOLe (ReadLSB w64 0 epsabs)
+       0)
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4398046511104000000))
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4183757152651862041))
+(Not (FOLe (FMul w64 4607182418800017408
+                      (FMul w64 4602678819172646912
+                                (FAdd w64 (ReadLSB w64 0 a)
+                                          (ReadLSB w64 0 b))))
+            0))
+(FDivAccuracyCheck (LOG w64 (FMul w64 4607182418800017408
+                                       N0:(FMul w64 4602678819172646912
+                                                    (FAdd w64 (ReadLSB w64 0 a)
+                                                              (ReadLSB w64 0 b)))))
+                    (FSqrt w64 N0))
+========
+=================JFS: JFS Result: SAT=================
+b
+[0,255,255,0,255,255,255,0,]
+epsabs
+[255,255,0,0,0,0,0,255,]
+epsrel
+[255,255,255,255,127,255,255,255,]
+a
+[255,0,0,0,0,0,0,0,]
+KLEE: WARNING: FUZZ: JFS evaluate SUCCESS !
+KLEE: ERROR: (location information missing) FloatPointCheck: FDiv Accuracy found !
+KLEE: NOTE: now ignoring this error at this location
+==============call jfs solver==============
+by yx ========>:
+(FOLe (ReadLSB w64 0 epsabs)
+       0)
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4398046511104000000))
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4183757152651862041))
+(Not (FOLe (FMul w64 4607182418800017408
+                      (FMul w64 4602678819172646912
+                                (FAdd w64 (ReadLSB w64 0 a)
+                                          (ReadLSB w64 0 b))))
+            0))
+(FDivInvalidCheck (LOG w64 (FMul w64 4607182418800017408
+                                      N0:(FMul w64 4602678819172646912
+                                                   (FAdd w64 (ReadLSB w64 0 a)
+                                                             (ReadLSB w64 0 b)))))
+                   (FSqrt w64 N0))
+========
+KLEE: WARNING: FUZZ: JFS solving TIMEOUT! Remove this state !
+==============call jfs solver==============
+by yx ========>:
+(FOLe (ReadLSB w64 0 epsabs)
+       0)
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4398046511104000000))
+(Eq false
+     (FOLt (ReadLSB w64 0 epsrel)
+           4183757152651862041))
+(Not (FOLe (FMul w64 4607182418800017408
+                      (FMul w64 4602678819172646912
+                                (FAdd w64 (ReadLSB w64 0 a)
+                                          (ReadLSB w64 0 b))))
+            0))
+(FDivZeroCheck (LOG w64 (FMul w64 4607182418800017408
+                                   N0:(FMul w64 4602678819172646912
+                                                (FAdd w64 (ReadLSB w64 0 a)
+                                                          (ReadLSB w64 0 b)))))
+                (FSqrt w64 N0))
+========
+KLEE: WARNING: KLEE: WATCHDOG: time expired, attempting halt via INT
+
+KLEE: ctrl-c detected, requesting interpreter to halt.
+KLEE: WARNING: KLEE: WATCHDOG: time expired, attempting halt via gdb
+
+Could not attach to process.  If your uid matches the uid of the target
+process, check the setting of /proc/sys/kernel/yama/ptrace_scope, or try
+again as the root user.  For more details, see /etc/sysctl.d/10-ptrace.conf
+ptrace: Operation not permitted.
+No symbol table is loaded.  Use the "file" command.
+The program is not being run.
+KLEE: WARNING: FUZZ: JFS solving TIMEOUT! Remove this state !
+KLEE: halting execution, dumping remaining states
+
+KLEE: done: total instructions = 580
+KLEE: done: completed paths = 0
+KLEE: done: partially completed paths = 16
+KLEE: done: generated tests = 16

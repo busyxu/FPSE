@@ -1,0 +1,31 @@
+KLEE: KLEE: WATCHDOG: watching 32778
+
+KLEE: output directory is "/home/aaa/fp-solver/analysis_opt/benchmarks/instances/instances&gsl_acosh&qsf&bfs_output"
+KLEE: Using Z3 solver backend
+KLEE: Replacing function "__isnanf" with "klee_internal_isnanf"
+KLEE: Replacing function "__isnan" with "klee_internal_isnan"
+KLEE: Replacing function "__isnanl" with "klee_internal_isnanl"
+KLEE: Replacing function "__isinff" with "klee_internal_isinff"
+KLEE: Replacing function "__isinf" with "klee_internal_isinf"
+KLEE: Replacing function "__isinfl" with "klee_internal_isinfl"
+KLEE: WARNING ONCE: function "gsl_ieee_set_mode" has inline asm
+>>>optsat exec time: 1.156415e+01 ms
+KLEE: WARNING: Z3OPTSAT: OPTSAT solving SAT and evaluate SUCCESS !
+>>>optsat exec time: 6.660543e+00 ms
+KLEE: WARNING: Z3OPTSAT: OPTSAT solving SAT and evaluate SUCCESS !
+KLEE: WARNING ONCE: calling external: sqrt((FSub w64 (FMul w64 N0:(ReadLSB w64 0 a)
+                     N0)
+           4607182418800017408)) at invhyp.c:34 51
+>>>optsat exec time: 7.148369e+00 ms
+KLEE: WARNING: Z3OPTSAT: OPTSAT solving SAT and evaluate SUCCESS !
+KLEE: WARNING ONCE: calling external: log1p((FAdd w64 (FSub w64 (ReadLSB w64 0 a)
+                     4607182418800017408)
+           4610479282544200874)) at invhyp.c:39 7
+>>>optsat exec time: 7.427925e+00 ms
+KLEE: WARNING: Z3OPTSAT: OPTSAT solving SAT and evaluate SUCCESS !
+
+KLEE: done: total instructions = 84
+KLEE: done: completed paths = 5
+KLEE: done: partially completed paths = 0
+KLEE: done: generated tests = 5
+Total exec time: 1.050485e+04 ms

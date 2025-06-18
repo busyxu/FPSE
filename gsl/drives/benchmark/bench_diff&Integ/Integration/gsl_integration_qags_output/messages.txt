@@ -1,0 +1,42 @@
+KLEE: Using Z3 solver backend
+KLEE: Replacing function "__isnanf" with "klee_internal_isnanf"
+KLEE: Replacing function "__isnan" with "klee_internal_isnan"
+KLEE: Replacing function "__isnanl" with "klee_internal_isnanl"
+KLEE: Replacing function "__isinff" with "klee_internal_isinff"
+KLEE: Replacing function "__isinf" with "klee_internal_isinf"
+KLEE: Replacing function "__isinfl" with "klee_internal_isinfl"
+KLEE: Replacing function "__fpclassifyf" with "klee_internal_fpclassifyf"
+KLEE: Replacing function "__fpclassify" with "klee_internal_fpclassify"
+KLEE: Replacing function "__finitef" with "klee_internal_finitef"
+KLEE: Replacing function "__finite" with "klee_internal_finite"
+KLEE: Replacing function "sqrt" with "klee_internal_sqrt"
+KLEE: Replacing function "fabs" with "klee_internal_fabs"
+KLEE: ERROR: error.c:47: abort failure
+KLEE: NOTE: now ignoring this error at this location
+KLEE: ERROR: qk.c:35: FloatPointCheck: Common Overflow found !
+KLEE: NOTE: now ignoring this error at this location
+KLEE: ERROR: qk.c:35: FloatPointCheck: Common Underflow found !
+KLEE: NOTE: now ignoring this error at this location
+KLEE: ERROR: qk.c:35: FloatPointCheck: Common Accuracy found !
+KLEE: NOTE: now ignoring this error at this location
+KLEE: ERROR: qk.c:35: FloatPointCheck: Common Underflow found !
+KLEE: NOTE: now ignoring this error at this location
+KLEE: ERROR: qk.c:35: FloatPointCheck: Common Accuracy found !
+KLEE: NOTE: now ignoring this error at this location
+KLEE: ERROR: qk.c:36: FloatPointCheck: Common Overflow found !
+KLEE: NOTE: now ignoring this error at this location
+KLEE: ERROR: qk.c:36: FloatPointCheck: Common Underflow found !
+KLEE: NOTE: now ignoring this error at this location
+KLEE: ERROR: qk.c:36: FloatPointCheck: Common Accuracy found !
+KLEE: NOTE: now ignoring this error at this location
+KLEE: ERROR: qk.c:36: FloatPointCheck: Common Underflow found !
+KLEE: NOTE: now ignoring this error at this location
+KLEE: ERROR: qk.c:36: FloatPointCheck: Common Accuracy found !
+KLEE: NOTE: now ignoring this error at this location
+KLEE: ERROR: (location information missing) FloatPointCheck: Common Underflow found !
+KLEE: NOTE: now ignoring this error at this location
+KLEE: ERROR: (location information missing) FloatPointCheck: FP Invalid found !
+KLEE: NOTE: now ignoring this error at this location
+KLEE: ERROR: (location information missing) FloatPointCheck: FDiv Accuracy found !
+KLEE: NOTE: now ignoring this error at this location
+KLEE: halting execution, dumping remaining states

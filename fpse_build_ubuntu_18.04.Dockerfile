@@ -1,0 +1,150 @@
+ARG BASE_IMAGE
+FROM ${BASE_IMAGE}
+LABEL maintainer="a@a.com"
+
+# Update and install required packages
+RUN sudo apt-get update && \
+    sudo apt-get -y --no-install-recommends install  \
+    build-essential \
+    cmake \
+    curl \
+    file \
+    g++-multilib \
+    gcc-multilib \
+    git \
+    libcap-dev \
+    libgoogle-perftools-dev \
+    libncurses5-dev \
+    libsqlite3-dev \
+    libtcmalloc-minimal4 \
+    python3-pip \
+    unzip \
+    graphviz \
+    doxygen \
+    pkg-config \
+    m4 \
+    flex \
+    bison \
+    libssl-dev \
+    default-jre \
+    default-jdk && \
+    sudo apt-get clean
+
+# Install Python packages
+RUN pip3 install lit tabulate wllvm toml tomli pyparsing -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+# Install CMake 3.22.1 from source
+RUN mkdir -p /home/aaa && \
+    curl -L https://github.com/Kitware/CMake/releases/download/v3.22.1/cmake-3.22.1.tar.gz -o /home/aaa/cmake-3.22.1.tar.gz && \
+    tar -xvzf /home/aaa/cmake-3.22.1.tar.gz -C /home/aaa
+
+WORKDIR /home/aaa/cmake-3.22.1
+RUN ./bootstrap && make -j$(nproc) && sudo make install
+RUN sudo update-alternatives --install /usr/bin/cmake cmake /usr/local/bin/cmake 1
+RUN cmake --version
+
+# LLVM
+WORKDIR /home/aaa/fp-solver
+COPY --chown=aaa:aaa llvm-6 ./llvm-6
+COPY --chown=aaa:aaa build_llvm-6.sh ./
+RUN ./build_llvm-6.sh
+
+# Z3
+WORKDIR /home/aaa/fp-solver
+COPY --chown=aaa:aaa z3-4.6.2 ./z3-4.6.2
+COPY --chown=aaa:aaa build_z3-4.6.2.sh ./
+RUN ./build_z3-4.6.2.sh
+
+# Environment setup
+WORKDIR /home/aaa/fp-solver
+ENV LLVM6_DIR=/home/aaa/fp-solver/llvm-6/build
+ENV LLVM6_BIN=/home/aaa/fp-solver/llvm-6/install/bin
+ENV Z3_DIR=/home/aaa/fp-solver/z3-4.6.2/build
+ENV Z3_BIN=/home/aaa/fp-solver/z3-4.6.2/install/bin
+ENV PATH="$PATH:$LLVM6_DIR:$LLVM6_BIN:$Z3_DIR:$Z3_BIN"
+
+# Install klee-uclib
+WORKDIR /home/aaa/fp-solver
+COPY --chown=aaa:aaa build_klee-uclib.sh ./
+RUN ./build_klee-uclib.sh
+
+# zlib
+WORKDIR /home/aaa/fp-solver
+ADD --chown=aaa:aaa zlib-1.2.11.tar.xz ./
+COPY --chown=aaa:aaa build_zlib-1.2.11.sh ./
+RUN ./build_zlib-1.2.11.sh
+
+# json-c
+WORKDIR /home/aaa/fp-solver
+COPY --chown=aaa:aaa json-c ./json-c
+COPY --chown=aaa:aaa build_json-c.sh ./
+RUN ./build_json-c.sh
+
+# gsl_runtime_lib
+WORKDIR /home/aaa/fp-solver
+COPY --chown=aaa:aaa gsl_runtime_lib ./gsl_runtime_lib
+RUN sudo ln -s /home/aaa/fp-solver/gsl_runtime_lib/libgslcblas.so /usr/lib/libgslcblas.so.0 && \
+    sudo ln -s /home/aaa/fp-solver/gsl_runtime_lib/libgsl.so /usr/lib/libgsl.so.25 && \
+    sudo ln -s /home/aaa/fp-solver/gsl_runtime_lib/libkleeRuntest.so /usr/lib/libkleeRuntest.so.1.0
+
+# GMP
+WORKDIR /home/aaa/fp-solver
+COPY --chown=aaa:aaa gmp-6.2.0x ./gmp-6.2.0x
+COPY --chown=aaa:aaa build_gmp.sh ./
+RUN ./build_gmp.sh
+
+# dreal
+WORKDIR /home/aaa/fp-solver
+COPY --chown=aaa:aaa dreal_install ./dreal_install
+COPY --chown=aaa:aaa build_dreal.sh ./
+RUN ./build_dreal.sh
+
+# mathsat5
+WORKDIR /home/aaa/fp-solver
+COPY --chown=aaa:aaa mathsat-5.6.11 ./mathsat-5.6.11
+
+# bitwuzla
+WORKDIR /home/aaa/fp-solver
+COPY --chown=aaa:aaa bitwuzla ./bitwuzla
+COPY --chown=aaa:aaa build_bitwuzla.sh ./
+RUN ./build_bitwuzla.sh
+
+# cvc5
+WORKDIR /home/aaa/fp-solver
+COPY --chown=aaa:aaa cvc5 ./cvc5
+COPY --chown=aaa:aaa build_cvc5.sh ./
+RUN ./build_cvc5.sh
+
+# NLopt
+WORKDIR /home/aaa/fp-solver
+COPY --chown=aaa:aaa nlopt2 ./nlopt2
+COPY --chown=aaa:aaa build_nlopt2.sh ./
+RUN ./build_nlopt2.sh
+
+# gosat
+WORKDIR /home/aaa/fp-solver
+COPY --chown=aaa:aaa gosat ./gosat
+COPY --chown=aaa:aaa build_gosat.sh ./
+RUN ./build_gosat.sh
+
+# qsf
+WORKDIR /home/aaa/fp-solver
+COPY --chown=aaa:aaa qsf ./qsf
+COPY --chown=aaa:aaa build_qsf.sh ./
+RUN ./build_qsf.sh
+
+# klee-float
+WORKDIR /home/aaa/fp-solver
+COPY --chown=aaa:aaa klee-float-solver ./klee-float-solver
+COPY --chown=aaa:aaa build_klee-float-solver.sh ./
+RUN ./build_klee-float-solver.sh
+
+# gsl
+WORKDIR /home/aaa/fp-solver
+COPY --chown=aaa:aaa gsl ./gsl
+
+# analysis_qsf
+WORKDIR /home/aaa/fp-solver
+COPY --chown=aaa:aaa analysis_qsf ./analysis
+
+RUN sudo apt-get -y install vim

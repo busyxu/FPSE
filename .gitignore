@@ -1,0 +1,24 @@
+*.log
+*.out
+
+# benchmarks
+analysis1/
+analysis2/
+analysis3/
+analysis_opt/
+
+klee/
+klee-float-sampling/
+klee-float-solver_1/
+klee-float-solver_3/
+nlopt/
+fpse_build/
+z3-4.13.0/
+cvc5-1.1.2/
+
+# dic
+**/.github/
+**/.idea/
+**/build/
+**/build-debug/
+**/cmake-build-debug/
