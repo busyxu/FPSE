@@ -15,6 +15,20 @@ nlopt/
 fpse_build/
 z3-4.13.0/
 cvc5-1.1.2/
+nlopt2/src/algs/mocea/
+nlopt2/src/algs/mocea_ds2/
+nlopt2/src/algs/mocea_ds3/
+nlopt2/src/algs/mocea_sp2/
+nlopt2/src/algs/mocea_sp3/
+nlopt2/src/algs/moead_ds/
+nlopt2/src/algs/moea_int/
+nlopt2/.git/
+nlopt2/.gitignore/
+qsampler/.git/
+qsampler/.gitignore/
+qsf/.git/
+qsf/.gitignore/
+
 
 # dic
 **/.github/

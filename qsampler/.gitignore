@@ -1,0 +1,52 @@
+<<<<<<< HEAD
+# Build directories
+/build*/
+/build-*/
+/cmake-build-*/
+#/cmake-build-*
+=======
+# Prerequisites
+*.d
+>>>>>>> a1ecad2b58839bcdb37900252c438a911e76ed54
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+<<<<<<< HEAD
+=======
+*.smod
+>>>>>>> a1ecad2b58839bcdb37900252c438a911e76ed54
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+<<<<<<< HEAD
+
+# Idea Project
+.idea
+
+# Vim backups
+*~
+=======
+>>>>>>> a1ecad2b58839bcdb37900252c438a911e76ed54

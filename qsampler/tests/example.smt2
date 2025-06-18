@@ -1,0 +1,6 @@
+(declare-fun x () (_ FloatingPoint 8 24))
+(assert (let (?x9 (fp.add RNE x (_ +zero 8 24)))
+            (fp.geq ?x9 x)
+        )
+)
+(check-sat)
